@@ -50,3 +50,13 @@ as domain_name FROM customer LIMIT 10;
 ### Задание 6*
 
 Доработайте запрос из предыдущего задания, скорректируйте значения в новых колонках: первая буква должна быть заглавной, остальные — строчными.
+```
+SELECT 
+CONCAT(UPPER(LEFT (1column, 1)), LOWER(RIGHT(1column, (CHAR_LENGTH(1column)-1)))) as user_name,
+CONCAT(UPPER(LEFT (2column, 1)), LOWER(RIGHT(2column, (CHAR_LENGTH(2column)-1)))) as domain_name
+FROM
+(SELECT SUBSTRING_INDEX(email, '@', 1) as 1column,
+RIGHT (email, (CHAR_LENGTH(email) - CHAR_LENGTH(SUBSTRING_INDEX(email, '@', 1)) -1)) as 2column
+FROM customer
+LIMIT 10) t;
+```
