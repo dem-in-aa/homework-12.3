@@ -44,7 +44,7 @@ SELECT LOWER(last_name) , LOWER(REPLACE(first_name, 'LL', 'PP')) FROM customer W
 ```
 SELECT SUBSTRING_INDEX(email, '@', 1) as user_name,
 RIGHT (email, (CHAR_LENGTH(email) - CHAR_LENGTH(SUBSTRING_INDEX(email, '@', 1)) -1))
-as domen_name FROM customer LIMIT 10;
+as domain_name FROM customer LIMIT 10;
 ```
 
 ### Задание 6*
