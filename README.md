@@ -35,7 +35,7 @@ SELECT * FROM payment ORDER BY payment_date DESC LIMIT 5;
 - все буквы в фамилии и имени из верхнего регистра переведите в нижний регистр,
 - замените буквы 'll' в именах на 'pp'.
 ```
-SELECT last_name , LOWER(REPLACE(first_name, 'LL', 'PP')) FROM customer WHERE first_name LIKE 'Kelly' OR first_name LIKE 'Willie';
+SELECT LOWER(last_name) , LOWER(REPLACE(first_name, 'LL', 'PP')) FROM customer WHERE first_name LIKE 'Kelly' OR first_name LIKE 'Willie';
 ```
 
 ## Дополнительные задания (со звёздочкой*)
