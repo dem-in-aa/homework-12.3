@@ -24,7 +24,7 @@ SELECT * FROM payment WHERE payment_date BETWEEN '2005-06-15 00:00:00' AND '2005
 
 Получите последние пять аренд фильмов.
 ```
-SELECT * FROM payment ORDER BY payment_date DESC LIMIT 5;
+SELECT * FROM rental ORDER BY  rental_date DESC LIMIT 5;
 ```
 
 ### Задание 4
