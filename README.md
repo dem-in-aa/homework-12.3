@@ -57,6 +57,5 @@ CONCAT(UPPER(LEFT (2column, 1)), LOWER(RIGHT(2column, (CHAR_LENGTH(2column)-1)))
 FROM
 (SELECT SUBSTRING_INDEX(email, '@', 1) as 1column,
 RIGHT (email, (CHAR_LENGTH(email) - CHAR_LENGTH(SUBSTRING_INDEX(email, '@', 1)) -1)) as 2column
-FROM customer
-LIMIT 10) t;
+FROM customer) t;
 ```
