@@ -8,6 +8,7 @@
 ```
 SELECT DISTINCT district FROM address WHERE district LIKE 'K%a' AND district NOT LIKE '% %';
 ```
+![](img/1.png)
 
 ### Задание 2
 
@@ -15,10 +16,13 @@ SELECT DISTINCT district FROM address WHERE district LIKE 'K%a' AND district NOT
 ```
 SELECT * FROM payment WHERE payment_date BETWEEN '2005-06-15 00:00:00' AND '2005-06-18 23:59:59' AND amount>10;
 ```
+![](img/2-1.png)
+
 с добавлением сортировки по дате платежа:
 ```
 SELECT * FROM payment WHERE payment_date BETWEEN '2005-06-15 00:00:00' AND '2005-06-18 23:59:59' AND amount>10 order by payment_date;
 ```
+![](img/2-2.png)
 
 ### Задание 3
 
@@ -26,6 +30,7 @@ SELECT * FROM payment WHERE payment_date BETWEEN '2005-06-15 00:00:00' AND '2005
 ```
 SELECT * FROM rental ORDER BY  rental_date DESC LIMIT 5;
 ```
+![](img/3.png)
 
 ### Задание 4
 
@@ -37,6 +42,7 @@ SELECT * FROM rental ORDER BY  rental_date DESC LIMIT 5;
 ```
 SELECT LOWER(last_name) , LOWER(REPLACE(first_name, 'LL', 'PP')) FROM customer WHERE first_name LIKE 'Kelly' OR first_name LIKE 'Willie';
 ```
+![](img/4.png)
 
 ### Задание 5*
 
@@ -46,6 +52,7 @@ SELECT SUBSTRING_INDEX(email, '@', 1) as user_name,
 RIGHT (email, (CHAR_LENGTH(email) - CHAR_LENGTH(SUBSTRING_INDEX(email, '@', 1)) -1))
 as domain_name FROM customer LIMIT 10;
 ```
+![](img/5.png)
 
 ### Задание 6*
 
@@ -59,3 +66,4 @@ FROM
 RIGHT (email, (CHAR_LENGTH(email) - CHAR_LENGTH(SUBSTRING_INDEX(email, '@', 1)) -1)) as 2column
 FROM customer) t;
 ```
+![](img/6.png)
