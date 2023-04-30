@@ -38,12 +38,14 @@ SELECT * FROM rental ORDER BY  rental_date DESC LIMIT 5;
 SELECT LOWER(last_name) , LOWER(REPLACE(first_name, 'LL', 'PP')) FROM customer WHERE first_name LIKE 'Kelly' OR first_name LIKE 'Willie';
 ```
 
-## Дополнительные задания (со звёздочкой*)
-Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
-
 ### Задание 5*
 
 Выведите Email каждого покупателя, разделив значение Email на две отдельных колонки: в первой колонке должно быть значение, указанное до @, во второй — значение, указанное после @.
+```
+SELECT SUBSTRING_INDEX(email, '@', 1) as user_name,
+RIGHT (email, (CHAR_LENGTH(email) - CHAR_LENGTH(SUBSTRING_INDEX(email, '@', 1)) -1))
+as domen_name FROM customer LIMIT 10;
+```
 
 ### Задание 6*
 
